@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="game-title">Memory Match</h1>
+            <div class="difficulty-container">
+                <label for="difficulty-select">Pilih Tingkat Kesulitan:</label>
+                <select id="difficulty-select">
+                    <option value="easy">Pemula</option>
+                    <option value="medium">Sedang</option>
+                    <option value="hard">Sulit</option>
+                </select>
+            </div>
+            <button id="start-button">Mulai Permainan</button>
+            <button id="mute-button">🔊</button>
+            <div id="difficulty-container"></div>
+        </header>
+        <section id="scoreboard" style="display: none;">
+            <p>Benar: <span id="correct-count">0</span></p>
+            <p>Salah: <span id="wrong-count">0</span></p>
+            <p>Waktu: <span id="timer">0</span> detik</p>
+            <p id="chance-message" style="color: black;"></p>
+        </section>
+        <section id="game-board" class="game-board" style="display: none;"></section>
+
+        <!-- Modal untuk notifikasi -->
+        <div id="notification-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="notification-title">Permainan Berakhir!</h2>
+                <p>Total Benar: <span id="final-correct-count">0</span></p>
+                <p>Total Salah: <span id="final-wrong-count">0</span></p>
+                <p>Total Waktu: <span id="final-time">0</span> detik</p>
+                <p>High Score: <span id="high-score">0</span></p>
+                <button id="restart-button">Main Lagi</button>
+            </div>
+        </div>
+
+        <audio id="background-music" src="sounds/background.mp3" preload="auto" loop></audio>
+        <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
+        <audio id="failure-sound" src="sounds/failure.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
